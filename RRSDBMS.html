@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrainHub - India's Premier Railway Booking Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Load stations first, then main script -->
+  <script src="stations.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        🚆
+        <h1>TrainHub</h1>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#trains" class="nav-link">Trains</a>
+      </nav>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn=ghost">Login</a>
+        <button class="btn btn-primary">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="hero-title">Book Your Train Journey</h1>
+    <p class="hero-description">Search, compare and book trains across India with ease.</p>
+
+    <form class="search-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="from">From</label>
+          <select id="from"></select>
+        </div>
+        <button type="button" class="swap-btn">⇄</button>
+        <div class="form-group">
+          <label for="to">To</label>
+          <select id="to"></select>
+        </div>
+        <div class="form-group">
+          <label for="date">Departure Date</label>
+          <input type="date" id="date">
+        </div>
+        <button type="submit" class="btn-search" id="searchBtn">Search Trains</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Train Listings -->
+  <section class="train-listings hidden" id="trains">
+    <div class="container">
+      <h2>Available Trains</h2>
+      <p id="searchSummary"></p>
+      <div class="trains-grid" id="trainResults"></div>
+    </div>
+  </section>
+
+  <!-- Booking Page -->
+  <section class="booking-page hidden" id="bookingPage">
+    <div class="container">
+      <h2>Passenger Details</h2>
+      <form id="passengerForm">
+        <div id="passengerFields"></div>
+        <button type="button" class="btn btn-primary" id="addPassengerBtn">+ Add Passenger</button>
+
+        <h3>Booking Summary</h3>
+        <p><b>Train:</b> <span id="summaryTrain"></span></p>
+        <p><b>Route:</b> <span id="summaryRoute"></span></p>
+        <p><b>Departure:</b> <span id="summaryDeparture"></span></p>
+        <p><b>Base Fare:</b> <span id="summaryPrice"></span></p>
+        <p><b>Passengers:</b> <span id="summaryPassengers"></span></p>
+        <p><b>Total:</b> <span id="summaryTotal"></span></p>
+
+        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Booking Confirmation -->
+  <!-- Booking Confirmation -->
+<section class="booking-confirmed hidden" id="bookingConfirmed">
+  <div class="container">
+    <div class="confirmation-box">
+      <div class="confirmation-header">
+        <h2>✅ Booking Confirmed!</h2>
+        <p>Your train ticket has been successfully booked</p>
+      </div>
+
+      <div class="confirmation-details">
+        <h3>Booking Details</h3>
+        <p><b>Booking ID:</b> <span id="bookingId"></span></p>
+        <p><b>Status:</b> Confirmed</p>
+        <p><b>Train:</b> <span id="confirmedTrain"></span></p>
+        <p><b>Route:</b> <span id="confirmedRoute"></span></p>
+        <p><b>Journey Date:</b> <span id="confirmedDate"></span></p>
+        <p><b>Total Amount:</b> <span id="confirmedTotal"></span></p>
+      </div>
+
+      <div class="confirmation-details">
+        <h3>Passenger Details</h3>
+        <div id="confirmedPassengers"></div>
+      </div>
+
+      <div class="confirmation-actions">
+        <button class="btn btn-primary">⬇ Download Ticket</button>
+        <button class="btn btn-ghost" onclick="location.reload()">← Book Another Ticket</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 TrainHub. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
