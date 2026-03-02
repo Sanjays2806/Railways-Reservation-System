@@ -27,11 +27,5 @@ Database:
 - Form validation using JavaScript
 - Data storage using MongoDB
 
-## Author
-
-Your Name  
-GitHub: https://github.com/your-username
-
-## License
 
 This project is developed for educational purposes.
